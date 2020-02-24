@@ -13,6 +13,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
 
       ## Rememberable
       t.datetime :remember_created_at
+      t.string :name
+      t.text :bio
+      t.string :cuisine
+      t.datetime :availability
+      t.integer :rating
+      t.integer :price
+      t.boolean :iscook
+
+
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
