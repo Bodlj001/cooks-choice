@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_162141) do
     t.datetime "availability"
     t.integer "rating"
     t.integer "price"
-    t.boolean "iscook"
+    t.boolean "iscook", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -65,6 +65,4 @@ ActiveRecord::Schema.define(version: 2020_02_24_162141) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "cooks"
-  add_foreign_key "bookings", "users"
 end
