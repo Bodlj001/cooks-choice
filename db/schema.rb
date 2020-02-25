@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_162141) do
     t.datetime "availability"
     t.integer "rating"
     t.integer "price"
-    t.boolean "iscook", default: false
+    t.boolean "iscook"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
