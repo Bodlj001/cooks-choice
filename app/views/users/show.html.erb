@@ -1,6 +1,20 @@
-<h1><%= @user.email %></h1>
-<% @bookings.each do |booking| %>
-  <h2><%= booking.location %></h2>
+<% if @user == current_user %>
+  <h1>Hello, <%= @user.name %>!</h1>
+
+  <h2>Your bookings:</h2>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>
+        <%= booking.date %> <br>
+        Cook: <%= booking.cook.name %> <br>
+        Location: <%= booking.location %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h1><%= @user.name %>'s profile</h1>
 <% end %>
 
-<%= link_to "New booking", new_user_booking_path(@user) %>
+<% if !current_user.iscook && @user.iscook %>
+  <%= link_to "Book this Cook!", new_user_booking_path(@user) %>
+<% end %>

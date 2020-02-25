@@ -5,6 +5,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @bookings = Booking.where(cook: @user)
+    get_bookings
+  end
+
+  private
+
+  def get_bookings
+    user_type = @user.iscook ? :cook : :user
+    @bookings = Booking.where(user_type => @user).order(date: :asc)
   end
 end
