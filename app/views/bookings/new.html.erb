@@ -1,3 +1,7 @@
-<h1>Your Booking</h1>
+<h1>Create a booking</h1>
 
-
+<%= simple_form_for [ @booking.cook, @booking ] do |f| %>
+  <%= f.input :location %>
+  <%= f.input :date, as: :date, html5: true %>
+  <%= f.submit "Create booking", class: "btn btn-primary" %>
+<% end %>

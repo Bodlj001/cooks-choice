@@ -2,3 +2,5 @@
 <% @bookings.each do |booking| %>
   <h2><%= booking.location %></h2>
 <% end %>
+
+<%= link_to "New booking", new_user_booking_path(@user) %>
