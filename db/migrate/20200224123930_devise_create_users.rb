@@ -19,7 +19,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.datetime :availability
       t.integer :rating
       t.integer :price
-      t.boolean :iscook
+      t.boolean :iscook, default: false
 
 
 
