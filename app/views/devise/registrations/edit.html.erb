@@ -9,28 +9,19 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :iscook, label: "Are you a cook?" %>
+    <% if current_user.iscook %>
+    <%= f.input :cuisine, label: "What type of cuisine do you cater?" %>
+    <%= f.input :price, label: "What would be your typical price" %>
+    <%= f.input :bio, label: "Please describe your services" %>
+    <%= f.input :photos, as: :file, label: "Add some pictures of your food.", input_html: { multiple: true } %>
+    <% end %>
+    <%= f.input :avatar, as: :file, label: "Add an avatar." %>
+    <%= f.input :current_password %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
