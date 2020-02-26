@@ -6,6 +6,7 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <%= f.input :name, label: "Full name" %>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
@@ -20,7 +21,7 @@
         <%= f.input :iscook, label: "Are you a cook?" %>
       </div>
 
-      <div class="form-actions">
+      <div class="form-actions btn btn-outline-secondary btn-lg btn-block">
         <%= f.button :submit, "Sign up" %>
       </div>
     <% end %>
