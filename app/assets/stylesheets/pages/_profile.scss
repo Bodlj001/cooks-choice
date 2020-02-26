@@ -1,12 +1,16 @@
 // Specific CSS for the profile page.
 
-// button - book this cook!
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 1px;
+}
 
-// avatar - name
-// price
-// rating
+#profile-photos {
+  width: 600px;
+}
 
-// cuisine
-// bio
-
-// photos
+.carousel-item > img {
+  height: 300px;
+}
