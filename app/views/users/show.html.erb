@@ -1,17 +1,1 @@
-<% if @user == current_user %>
-  <h1>Hello, <%= @user.name %>!</h1>
-
-  <h2>Your bookings:</h2>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li>
-        <%= booking.date %> <br>
-        Cook: <%= booking.cook.name %> <br>
-        Location: <%= booking.location %>
-        <% if !current_user.iscook %>
-          <%= link_to "CANCEL", user_booking_path(@user, booking), method: "delete" %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render "users/list_bookings" %>
