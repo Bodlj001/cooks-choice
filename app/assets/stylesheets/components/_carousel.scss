@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.carousel {
+  width: 30%;
+}
+.name-bio-flex {
+
+}
+.full-name  {
+  margin-top: 0;
+}
+
+.bio {
+  margin-left: 20px;
+}
+.profile-info {
+  display: -webkit-box;
+  width: 70%;
+}
+.bottom-carousel  {
+  height: 40vh;
+}
