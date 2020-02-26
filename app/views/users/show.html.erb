@@ -2,32 +2,19 @@
   <div class="container">
     <div class="row">
       <div class="col-sm">
-        <% if @user == current_user %>
-          <h1>Hello, <%= @user.name %>!</h1>
-
-          <h2>Your bookings:</h2>
-          <ul>
-            <% @bookings.each do |booking| %>
-              <li>
-                <%= booking.date %> <br>
-                Cook: <%= booking.cook.name %> <br>
-                Location: <%= booking.location %>
-                <% if !current_user.iscook %>
-                  <%= link_to "CANCEL", user_booking_path(@user, booking), method: "delete" %>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        <% elsif @user.iscook %>
+        <% if @user.iscook %>
 
           <div id="profile-info">
             <div class="profile-">
-              <%= cl_image_tag(@user.avatar.key,
+              <% if @user.avatar.attached? %>
+                <%= cl_image_tag(@user.avatar.key,
                 width: 170, height: 170, crop: :fill, class: "profile-avatar") %>
+              <% end %>
               <h1><%= @user.name %></h1>
             </div>
-            <a href="http://localhost:3000/users/edit"><i class='fas fa-pencil-alt'></i></a>
-
+            <% if current_user == @user %>
+              <a href="http://localhost:3000/users/edit"><i class='fas fa-pencil-alt'></i></a>
+            <% end %>
             <h3>£<%= @user.price / 100 %> per day</h3>
             <div id="profile-stars">
               <% if @user.rating %>
@@ -74,5 +61,24 @@
     </div>
   </div>
 </div>
+
+
+<% if @user == current_user %>
+  <h1>Hello, <%= @user.name %>!</h1>
+
+  <h2>Your bookings:</h2>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>
+        <%= booking.date %> <br>
+        Cook: <%= booking.cook.name %> <br>
+        Location: <%= booking.location %>
+        <% if !current_user.iscook %>
+          <%= link_to "CANCEL", user_booking_path(@user, booking), method: "delete" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 
