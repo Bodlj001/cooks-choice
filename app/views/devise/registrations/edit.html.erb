@@ -10,6 +10,7 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
     <% if current_user.iscook %>
+    <%= f.input :name, label: "What is your name?" %>
     <%= f.input :cuisine, label: "What type of cuisine do you cater?" %>
     <%= f.input :price, label: "What would be your typical price" %>
     <%= f.input :bio, label: "Please describe your services" %>
