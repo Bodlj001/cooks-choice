@@ -15,7 +15,9 @@
             <% if current_user == @user %>
               <a href="http://localhost:3000/users/edit"><i class='fas fa-pencil-alt'></i></a>
             <% end %>
-            <h3>£<%= @user.price / 100 %> per day</h3>
+            <% if @user.price %>
+              <h3>£<%= @user.price / 100 %> per day</h3>
+            <% end %>
             <div id="profile-stars">
               <% if @user.rating %>
                 <% @user.rating.times do %>
