@@ -1,7 +1,11 @@
-<h1>Create a booking</h1>
-
-<%= simple_form_for [ @booking.cook, @booking ] do |f| %>
-  <%= f.input :location %>
-  <%= f.input :date, as: :date, html5: true %>
-  <%= f.submit "Create booking", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <h1>Book <%= @booking.cook.name %>!</h1>
+  <br>
+  <div class="form-container">
+  <%= simple_form_for [ @booking.cook, @booking ] do |f| %>
+    <%= f.input :location, label: "Where is the location of the booking?" %>
+    <%= f.input :date, as: :date, html5: true %>
+    <%= f.submit "Create booking", class: "btn btn-light" %>
+  <% end %>
+  </div>
+</div>
