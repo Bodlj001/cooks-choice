@@ -13,7 +13,9 @@
               <h1><%= @user.name %></h1>
             </div>
             <% if current_user == @user %>
-              <a href="http://localhost:3000/users/edit"><i class='fas fa-pencil-alt'></i></a>
+              <%= link_to edit_user_registration_path do %>
+                <i class='fas fa-pencil-alt'></i>
+              <% end %>
             <% end %>
             <% if @user.price %>
               <h3>£<%= @user.price / 100 %> per day</h3>
