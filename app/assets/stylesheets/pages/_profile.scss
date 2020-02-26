@@ -1,0 +1,16 @@
+// Specific CSS for the profile page.
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 1px;
+}
+
+#profile-photos {
+  width: 600px;
+}
+
+.carousel-item > img {
+  height: 300px;
+}
