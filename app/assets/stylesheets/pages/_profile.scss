@@ -6,14 +6,6 @@
   box-shadow: 0px 0px 5px 1px;
 }
 
-#profile-photos {
-  width: 600px;
-}
-
-.carousel-item > img {
-  height: 500px;
-}
-
 .show-container {
   margin-top: 5vh;
   height: 100vh;
@@ -21,3 +13,17 @@
 .booking-button {
   margin-bottom: 5vh;
 }
+
+.profile- {
+  display: flex;
+}
+
+.username {
+  height: 100%;
+  margin-left: 1vw;
+  h3{
+
+  }
+}
+
+
