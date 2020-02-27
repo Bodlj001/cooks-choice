@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
   before_action :find_cook
 
-  def new
-    @booking = Booking.new(cook: @cook)
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @user = User.find(current_user.id)
@@ -12,6 +8,7 @@ class BookingsController < ApplicationController
     @booking.user = @user
     if @booking.save
       redirect_to user_path(@booking.cook)
+      # TODO: go to booking confirmation
     else
       render :new
     end
