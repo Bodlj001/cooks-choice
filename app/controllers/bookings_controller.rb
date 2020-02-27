@@ -7,8 +7,8 @@ class BookingsController < ApplicationController
     @booking.cook = @user
     @booking.user = @renter
     if @booking.save
-      redirect_to user_path(@booking.cook)
-      # TODO: go to booking confirmation
+      redirect_to user_path(@renter)
+      # some kind of modal?
     else
       render "users/show_cook"
     end
@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
     @booking.destroy
     @renter = User.find(params[:user_id])
     # redirect to the one who destroyed it!
-    # only .user at the moment, but could be .cook
     redirect_to user_path(@renter)
   end
 
