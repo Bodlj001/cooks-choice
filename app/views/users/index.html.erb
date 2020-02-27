@@ -1,25 +1,27 @@
 
-<div class="wrapper">
-  <div class="cards-wrapper container" >
-    <h1 class="heading">Choose your chef</h1>
-    <div class="test">
-    <% @cooks.each do |cook| %>
-      <%= link_to user_path(cook), class:"card-link" do %>
-        <div class="card mb-3" style="max-width: 450px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <% if cook.avatar.attached?%>
-                <%= cl_image_tag(cook.avatar.key,
-                width: 170, height: 170, crop: :fill) %>
-              <% else %>
-                <img src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" alt="fake image" style="width: 170px;height: 170px; object-fit: cover; object-position: 50% 65%;">
-              <% end %>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"><%=cook.name%></h5>
-                <p class="card-text"><%=cook.bio%></p>
-                <p class="card-tex"><small class="text-muted">Last updated <%= rand(1..20) %> days ago</small></p>
+<div class="home-container">
+  <div class="wrapper">
+    <div class="cards-wrapper container" >
+      <h1 class="heading">Choose your chef</h1>
+      <div class="test">
+      <% @cooks.each do |cook| %>
+        <%= link_to user_path(cook) do %>
+          <div class="card mb-3" style="max-width: 450px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <% if cook.avatar.attached?%>
+                  <%= cl_image_tag(cook.avatar.key,
+                  width: 170, height: 169, crop: :fill) %>
+                <% else %>
+                  <img src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" alt="fake image" style="width: 170px;height: 169px; object-fit: cover; object-position: 50% 65%;">
+                <% end %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%=cook.name%></h5>
+                  <p class="card-text"><%=cook.bio%></p>
+                  <p class="card-tex"><small class="text-muted">Last updated <%= rand(1..20) %> days ago</small></p>
+                </div>
               </div>
             </div>
           </div>
