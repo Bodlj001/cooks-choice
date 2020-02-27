@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     @booking.user = @renter
     if @booking.save
       redirect_to user_path(@renter)
-      # some kind of modal?
+      # TODO: some kind of success modal?
     else
       render "users/show_cook"
     end
