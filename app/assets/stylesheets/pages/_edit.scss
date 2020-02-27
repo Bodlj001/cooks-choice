@@ -6,7 +6,7 @@
 
 
 #edit-container {
-  background: url('https://images.unsplash.com/photo-1549590143-d5855148a9d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80') no-repeat center center/cover;
+  background: asset-url('images/food-2879265.jpg') no-repeat center center/cover;
   color: white;
 //   bottom:0;
 //   left:0;
@@ -18,7 +18,10 @@ min-height: calc(100vh - 57px);
 }
 
 
+.edit-controller {
+  margin-top: 80px;
 
+}
 
 .h2 {
   // margin-top: 80px;
@@ -28,11 +31,11 @@ min-height: calc(100vh - 57px);
 
 .form-actions {
   text-align: center;
- 
- 
+
+
   border-radius: 10px;
 }
- 
+
 .form-inputs {
   margin-top: 15px;
   margin-bottom: 25px;
@@ -54,7 +57,7 @@ min-height: calc(100vh - 57px);
       background: rgba(184, 185, 184, 0.3);
       color: rgb(240, 240, 240);
     }
-  
+
 }
 
 .back-btn {
