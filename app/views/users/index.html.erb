@@ -10,9 +10,9 @@
               <div class="col-md-4">
                 <% if cook.avatar.attached?%>
                   <%= cl_image_tag(cook.avatar.key,
-                  width: 170, height: 170, crop: :fill) %>
+                  width: 170, height: 169, crop: :fill) %>
                 <% else %>
-                  <img src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" alt="fake image" style="width: 170px;height: 170px; object-fit: cover; object-position: 50% 65%;">
+                  <img src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" alt="fake image" style="width: 170px;height: 169px; object-fit: cover; object-position: 50% 65%;">
                 <% end %>
               </div>
               <div class="col-md-8">
