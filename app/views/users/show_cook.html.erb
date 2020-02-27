@@ -34,58 +34,62 @@
 
 
 <div class="show-container container">
-  <div class="container">
 
-    <div class="row">
-      <div class="col-sm" style="margin-top:1vh;">
+  <div class="row">
 
-        <div class="col-sm" style="">
-          <div id="profile-info">
-            <div class="profile-">
-              <% if @user.avatar.attached? %>
-                <%= cl_image_tag(@user.avatar.key,
-                width: 170, height: 170, crop: :fill, class: "profile-avatar") %>
-              <% else %>
-                <img class="profile-avatar" src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" alt="fake image" style="width: 170px;height: 170px; object-fit: cover; object-position: 50% 65%;">
-              <% end %>
-              <div class="username">
-                <h3><%= @user.cuisine %></h3>
-                <p id="profile-bio"><%= @user.bio %></p>
-
+    <div class="col-sm" style="margin-top:1vh;">
+      <div class="col-sm" style="">
+        <div id="profile-info">
+          <div class="profile-">
+            <% if @user.avatar.attached? %>
+              <%= cl_image_tag(@user.avatar.key,
+              width: 170, height: 170, crop: :fill, class: "profile-avatar") %>
+            <% else %>
+              <img class="profile-avatar" src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" alt="fake image" style="width: 170px;height: 170px; object-fit: cover; object-position: 50% 65%;">
+            <% end %>
+            <div class="username">
+              <div class="pencil-edit" style="display: flex; justify-content: space-between;">
+                <h1 style="padding-right: 149px;"><%= @user.name %></h1>
+                <% if current_user == @user %>
+                  <%= link_to edit_user_registration_path do %>
+                    <i class='fas fa-pencil-alt'></i>
+                  <% end %>
+                <% end %>
               </div>
+              <p id="profile-bio"><%= @user.bio %></p>
+
             </div>
           </div>
         </div>
+      </div>
 
-        <hr>
-        <div class="col-sm" style="margin-top: 10px;display: flex; justify-content: space-between;">
+      <hr>
+      <div class="col-sm" style="margin-top: 10px;display: flex; justify-content: space-between;">
 
-          <% if current_user == @user %>
-            <%= link_to edit_user_registration_path do %>
-              <i class='fas fa-pencil-alt'></i>
+
+        <div id="profile-stars">
+          <% if @user.rating %>
+            <% @user.rating.times do %>
+              <i class="far fa-star"></i>
             <% end %>
-          <% end %>
-          <div id="profile-stars">
-            <% if @user.rating %>
-              <% @user.rating.times do %>
-                <i class="far fa-star"></i>
-              <% end %>
-            <% end %>
-          </div>
-          <h1 style="padding-right: 149px;"><%= @user.name %></h1>
-          <% if @user.price %>
-            <h3 style="margin-top: 9px;">£<%= @user.price / 100 %> per day</h3>
           <% end %>
         </div>
-      </div>
-    <div class="col-sm">
+        <h3><%= @user.cuisine %></h3>
 
+        <% if @user.price %>
+          <h3 style="margin-top: 9px;">£<%= @user.price / 100 %> per day</h3>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-sm" style="display: flex; justify-content: space-around;">
+      <% if current_user != @user %>
+        <%= render "users/booking_form" %>
+      <% end %>
+      <%= render "users/list_bookings" %>
     </div>
   </div>
 </div>
-    
-<% if !current_user.iscook && current_user != @user %>
-  <%= render "users/booking_form" %>
-<% end %>
 
-<%= render "users/list_bookings" %>
+
+
