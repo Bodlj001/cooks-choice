@@ -8,22 +8,22 @@
 #edit-container {
   background: url('https://images.unsplash.com/photo-1549590143-d5855148a9d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80') no-repeat center center/cover;
   color: white;
-  bottom:0;
-  left:0;
-  position:fixed;
-  right:0;
-  top:0;
-  opacity: 0.9;
+//   bottom:0;
+//   left:0;
+//   right:0;
+//   top:0;
+//   opacity: 0.9;
+//   position: fixed;
+min-height: calc(100vh - 57px);
 }
 
-.edit-controller {
-  margin-top: 80px;
-   
-}
+
+
 
 .h2 {
-  margin-top: 80px;
+  // margin-top: 80px;
   color: rgba(230, 230, 230, 0.7);
+  padding-top: 10px;
 }
 
 .form-actions {
@@ -34,10 +34,12 @@
 }
  
 .form-inputs {
-  margin-top: 25px;
+  margin-top: 15px;
+  margin-bottom: 25px;
   background: rgba(184, 185, 184, 0.1);
   padding-top: 15px;
   padding-bottom: 15px;
+
 }
 
 .btn  {
