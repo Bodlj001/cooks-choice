@@ -2,11 +2,7 @@
 .wrapper  {
   background: url('https://images.unsplash.com/photo-1505976231433-d7ebe8382bb5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')no-repeat center center/cover;
   color: white;
-  bottom:0;
-  left:0;
-  right:0;
-  top:0;
-  opacity: 0.9;
+ height: 100vh;
 }
 .home-container {
   background: rgba(0, 0, 0, 0.8);
@@ -41,6 +37,8 @@ a:hover {
 .test {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .card-body {
@@ -50,4 +48,8 @@ a:hover {
 .heading {
   margin-top: 10px;
   font-weight: bold;
+}
+
+.card-link {
+  background: blue;
 }
