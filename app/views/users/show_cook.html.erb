@@ -79,13 +79,13 @@
         </div>
       </div>
     <div class="col-sm">
-      <% if !current_user.iscook && current_user != @user %>
-        <%= link_to "Book this Cook!", new_user_booking_path(@user), {
-         class: 'booking-button btn btn-primary'
-        } %>
-      <% end %>
+
     </div>
   </div>
 </div>
+    
+<% if !current_user.iscook && current_user != @user %>
+  <%= render "users/booking_form" %>
+<% end %>
 
 <%= render "users/list_bookings" %>
