@@ -1,30 +1,30 @@
-<div class="edit-container container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div id="edit-container" class="edit-opacity">
+            <%= link_to "Back", :back , class: "back-btn" %>
+  <div class="edit-container container ">
+    <h2 class="h2">Edit <%= resource_name.to_s.humanize %></h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
+        <div class="form-inputs col-sm-6">
+          <%= f.input :email, required: true, autofocus: true %>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-      <% end %>
-      <% if current_user.iscook %>
-      <%= f.input :name, label: "What is your name?" %>
-      <%= f.input :cuisine, label: "What type of cuisine do you cater?" %>
-      <%= f.input :price, label: "What would be your typical price" %>
-      <%= f.input :bio, label: "Please describe your services" %>
-      <%= f.input :photos, as: :file, label: "Add some pictures of your food.", input_html: { multiple: true } %>
-      <% end %>
-      <%= f.input :avatar, as: :file, label: "Add an avatar." %>
-      <%= f.input :current_password %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Update" %>
-    </div>
-  <% end %>
-
-  <%= link_to "Back", :back %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+          <% if current_user.iscook %>
+          <%= f.input :name, label: "What is your name?" %>
+          <%= f.input :cuisine, label: "What type of cuisine do you cater?" %>
+          <%= f.input :price, label: "What would be your typical price" %>
+          <%= f.input :bio, label: "Please describe your services" %>
+          <%= f.input :photos, as: :file, label: "Add some pictures of your food.", input_html: { multiple: true } %>
+          <% end %>
+          <%= f.input :avatar, as: :file, label: "Add an avatar." %>
+          <%= f.input :current_password %>
+          <div class="form-actions">
+          <%= f.button :submit, "Update", class: "update-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
