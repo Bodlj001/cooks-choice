@@ -13,14 +13,14 @@
           </div>
 
           <!-- show RENTER if cook, COOK if renter -->
-          <% if !@user.iscook %>
-            <% other = booking.cook %>
-          <% else %>
+          <% if @user.iscook %>
             <% other = booking.user %>
+          <% else %>
+            <% other = booking.cook %>
           <% end %>
 
           <div style="text-align: right;">
-            <h6 class="text-muted"><%= other.name %></h6>
+            <h6 class="text-muted"><%= link_to other.name, user_path(other) %></h6>
             <%= link_to user_booking_path(@user, booking), method: "delete" do %>
               <i class="fas fa-trash-alt" style="color: darkred;"></i>
             <% end %>
