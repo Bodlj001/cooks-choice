@@ -1,14 +1,35 @@
 <% if @user == current_user %>
 
-  <h2>Your bookings:</h2>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li>
-        <%= booking.date %> <br>
-        Cook: <%= booking.cook.name %> <br>
-        Location: <%= booking.location %>
-        <%= link_to "CANCEL", user_booking_path(@user, booking), method: "delete" %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="form-container p-3 rounded-lg shadow" style="width: 30vw;">
+
+    <h2 class="mb-3">Your bookings:</h2>
+
+    <ul class="list-group">
+      <% @bookings.each do |booking| %>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0"><%= booking.date.strftime("%m/%d/%Y") %></h6>
+            <small class="text-muted"><%= booking.location %></small>
+          </div>
+
+          <!-- show RENTER if cook, COOK if renter -->
+          <% if @user.iscook %>
+            <% other = booking.user %>
+          <% else %>
+            <% other = booking.cook %>
+          <% end %>
+
+          <div style="text-align: right;">
+            <h6 class="text-muted"><%= link_to other.name, user_path(other) %></h6>
+            <%= link_to user_booking_path(@user, booking), method: "delete" do %>
+              <i class="fas fa-trash-alt" style="color: darkred;"></i>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+
 <% end %>
+
