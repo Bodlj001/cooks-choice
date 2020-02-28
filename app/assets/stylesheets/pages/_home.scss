@@ -21,10 +21,12 @@
 
 
 .card {
+  display: flex;
+  flex-wrap: wrap;
   margin: 20px;
   box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
-  width: 60vw;
-  height: 170px;
+  justify-content: center;
+  align-items: center;
 }
 
 a:hover {
@@ -46,14 +48,18 @@ a:hover {
 
 
 .test {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .card-body {
-  margin-left: 10px;
+  border-top: 1px black solid;
+}
+
+.card-image {
+  padding: 10px 0px;
 }
 
 .heading {
@@ -63,4 +69,36 @@ a:hover {
 
 .card-link {
   background: blue;
+}
+
+.index-avatar {
+  border-radius: 50%;
+}
+
+.card-footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px black solid;
+  width: 90%;
+}
+.card-item  {
+  padding-left: 10px;
+  margin: 0;
+
+}
+
+.card-rating-price  {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card-social  {
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-items {
+  width: 50%;
+  height: 100%;
 }
