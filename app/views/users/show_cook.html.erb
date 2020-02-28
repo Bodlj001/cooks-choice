@@ -88,7 +88,7 @@
       <div class="col-sm my-4" style="display: flex;padding-left: 0;">
 
         <% if @viewer_can_review %>
-          <div class="form-container rounded-lg shadow">
+          <div class="form-container rounded-lg shadow mr-4">
             <h2>Leave a Review</h2>
             <%= simple_form_for [ @user, @review ] do |f| %>
                 <%= f.input :content, label: "Review" %>
@@ -98,7 +98,8 @@
           </div>
         <% end %>
 
-      <div class="col-sm m-3 p-3 shadow" style="background-color: white;overflow-y: scroll;max-height:325px; max-width: 70%;}">
+      <div class="col-sm my-3 p-3 shadow" style="background-color: white;overflow-y: scroll;max-height:325px; max-width: 70%;}">
+
         <h3>Reviews</h3>
         <div class="reviews-show">
           <% @reviews.each do |review| %>
