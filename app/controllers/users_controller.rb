@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @review = Review.new
+    @reviews = Review.all
     get_bookings
     @booking = Booking.new(cook: @user)
     if @user.iscook
