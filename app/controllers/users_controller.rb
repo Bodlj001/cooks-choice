@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @review = Review.new
-    @reviews = Review.all
+    @reviews = Review.where(user: @user)
     @viewer_can_review = Booking.where(cook: @user).length > 0
 
     get_bookings
