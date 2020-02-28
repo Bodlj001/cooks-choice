@@ -84,8 +84,8 @@
         <%= render "users/list_bookings" %>
       </div>
     </div>
-    <div class="row" style="display: flex;">
-      <div class="col-sm my-4" style="margin-top:1vh;display: flex;padding-left: 0;">
+    <div class="row" style="display: flex; justify-content: center;">
+      <div class="col-sm my-4" style="display: flex;padding-left: 0; justify-content: center;">
 
         <% if @viewer_can_review %>
           <div class="form-container rounded-lg shadow mr-4">
@@ -98,7 +98,8 @@
           </div>
         <% end %>
 
-      <div class="col-sm my-3 p-3 shadow" style="margin-top:1vh;margin-top: 1vh;background-color: white;overflow-y: scroll;max-height:325px;}">
+      <div class="col-sm my-3 p-3 shadow" style="background-color: white;overflow-y: scroll;max-height:325px; max-width: 70%;}">
+
         <h3>Reviews</h3>
         <div class="reviews-show">
           <% @reviews.each do |review| %>
