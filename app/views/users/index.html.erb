@@ -11,7 +11,7 @@
       <% @cooks.each do |cook| %>
         <%= link_to user_path(cook), class: "col-4" do %>
           <div class="card">
-            <div class="card-image">
+            <div class="card-blocks card-image">
                 <% if cook.avatar.attached?%>
                   <%= cl_image_tag(cook.avatar.key,
                   width: 80, height: 80, crop: :fill, class: "index-avatar") %>
@@ -20,15 +20,15 @@
                 <% end %>
             </div>
 
-            <div class="card-body">
-              <div class="card-title">
+            <div class="card-blocks card-body">
+              <div class="c-title">
                 <h5 class="card-title"><%=cook.name%></h5>
               </div>
-              <div class="card-content">
+              <div class="card-blocks card-content">
                 <p class="card-text"><%=cook.bio%></p>
               </div>
             </div>
-              <div class=" card-footer ">
+              <div class=" card-blocks card-footer ">
                 <div class="footer-items card-social">
                   <i class="fab fa-facebook-square"></i>
                   <i class="fab fa-twitter-square"></i>
@@ -36,7 +36,6 @@
                   <i class="fab fa-linkedin"></i>
                 </div>
                 <div class="footer-items card-rating-price">
-                  <p class="card-item card-rating"> Rating </p>
                   <p class="card-item card-price">£<%= rand(100..1000)%></p>
                 </div>
               </div>

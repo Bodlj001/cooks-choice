@@ -32,6 +32,11 @@
   box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
   justify-content: center;
   align-items: center;
+  background: rgba(200, 200, 200, 0.5);
+  padding: 5px;  
+}
+.card-content{
+  margin-top: 15px;
 }
 
 a:hover {
@@ -45,10 +50,18 @@ a:hover {
 
 .card-title {
   color: black;
+  padding-top: 10px;
+}
+
+.c-title{
+  width: 90%;
 }
 
 .card-text {
   color: black;
+  border-top: 1px black solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
@@ -61,10 +74,16 @@ a:hover {
 
 .card-body {
   border-top: 1px black solid;
+  width: 90%;
+  padding: 0;
 }
 
 .card-image {
   padding: 10px 0px;
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
 }
 
 .heading {
@@ -86,6 +105,9 @@ a:hover {
   align-items: center;
   border-top: 1px black solid;
   width: 90%;
+  margin-bottom: 10px;
+  color: black;
+  background:rgba(240, 240, 240, 0.9);
 }
 .card-item  {
   padding-left: 10px;
@@ -107,3 +129,9 @@ a:hover {
   width: 50%;
   height: 100%;
 }
+
+.card-blocks {
+  margin-bottom: 15px;
+  background: rgba(240, 240, 240, 0.9)
+}
+
