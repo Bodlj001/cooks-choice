@@ -29,11 +29,12 @@
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
-  box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 3px 3px rgba(120,120,120,0.1);
   justify-content: center;
   align-items: center;
-  background: rgba(200, 200, 200, 0.5);
+  background: rgba(200, 200, 200, 0.2);
   padding: 5px;  
+  border: none;
 }
 .card-content{
   width:  90%
@@ -133,6 +134,7 @@ a:hover {
 .card-blocks {
   margin-bottom: 15px;
   background: rgba(240, 240, 240, 0.9);
-  box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 3px 3px rgba(120,120,120,0.1);
+  background: rgba(250, 250, 250, 0.8)
 }
 
