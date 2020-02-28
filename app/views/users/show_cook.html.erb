@@ -35,10 +35,10 @@
 
   <div class="show-container container">
 
-    <div class="row">
+    <div class="row" style="">
 
-      <div class="col-sm" style="margin-top:1vh;">
-        <div class="col-sm" style="">
+      <div class="col-sm" style="margin-top:1vh;margin-top: 1vh;border: solid 1px;margin-bottom: 14px; padding: 0;border-radius: 4px;">
+        <div class="col-sm" style="padding-left: 0;">
           <div id="profile-info">
             <div class="profile-">
               <% if @user.avatar.attached? %>
@@ -63,21 +63,16 @@
           </div>
         </div>
 
-        <hr>
+        <hr style="margin-top: 1px">
         <div class="col-sm" style="margin-top: 10px;display: flex; justify-content: space-between;">
 
 
-          <div id="profile-stars">
-            <% if @user.rating %>
-              <% @user.rating.times do %>
-                <i class="far fa-star"></i>
-              <% end %>
-            <% end %>
-          </div>
-          <h3><%= @user.cuisine %></h3>
+          <h5><i class="fas fa-utensils" style="padding-right: 6px;"></i>  <%= @user.cuisine %></h5>
 
           <% if @user.price %>
+
             <h3 style="margin-top: 9px;">£<%= @user.price %> per day</h3>
+
           <% end %>
         </div>
       </div>
@@ -89,25 +84,25 @@
         <%= render "users/list_bookings" %>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm" style="margin-top:1vh;">
+    <div class="row" style="">
+      <div class="col-sm" style="margin-top:1vh;display: flex;padding-left: 0;">
 
-      <div class="form-container rounded-lg shadow">
-        <h2>Leave a Review</h2>
-        <%= simple_form_for [ @user, @review ] do |f| %>
-            <%= f.input :content, label: "Review" %>
-            <%= f.input :rating, label: "Rating" %>
-            <%= f.submit "submit", class: "btn btn-primary" %>
-        <% end %>
+        <div class="form-container rounded-lg shadow">
+          <h2>Leave a Review</h2>
+          <%= simple_form_for [ @user, @review ] do |f| %>
+              <%= f.input :content, label: "Review" %>
+              <%= f.input :rating, label: "Rating" %>
+              <%= f.submit "submit", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      <div class="col-sm" style="margin-top:1vh;margin-top: 1vh;border: solid;border-radius: 5px;margin-left: 16px;}">
+        <h3><strong>Reviews</strong></h3>
+        <div class="reviews-show">
+          <% @reviews.each do |review| %>
+            <%= review.content  %>
+          <% end %>
+        </div>
       </div>
-    <div class="reviews-show">
-      <% @reviews.each do |review| %>
-        <%= review.content  %>
-      <% end %>
-    </div>
-
-
     </div>
   </div>
 
