@@ -18,11 +18,7 @@
           <%= link_to "Welcome, #{current_user.name}", user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <% if current_user.avatar.attached? %>
-            <%= image_tag url_for(current_user.avatar), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% else %>
-            <%= image_tag "https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
+          <%= render "shared/avatar" %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
