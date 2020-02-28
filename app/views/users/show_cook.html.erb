@@ -37,7 +37,7 @@
 
     <div class="row" style="">
 
-      <div class="col-sm" style="margin-top:1vh;margin-top: 1vh;border: solid 1px;margin-bottom: 14px; padding: 0;border-radius: 4px;">
+      <div class="col-sm" style="margin-top:1vh;margin-top: 1vh;border: solid 1px;margin-bottom: 14px; padding: 0;border-radius: 4px; background-color: white;">
         <div class="col-sm" style="padding-left: 0;">
           <div id="profile-info">
             <div class="profile-">
@@ -95,11 +95,12 @@
               <%= f.submit "submit", class: "btn btn-primary" %>
           <% end %>
         </div>
-      <div class="col-sm" style="margin-top:1vh;margin-top: 1vh;border: solid;border-radius: 5px;margin-left: 16px;}">
-        <h3><strong>Reviews</strong></h3>
+      <div class="col-sm" style="margin-top:1vh;margin-top: 1vh;border: solid;border-radius: 5px;margin-left: 16px;background-color: white;overflow-y: scroll;max-height:325px;}">
+        <h3>Reviews</h3>
         <div class="reviews-show">
           <% @reviews.each do |review| %>
-            <%= current_user.avatar %>
+            <%= review.content %>
+            <hr>
           <% end %>
         </div>
       </div>
