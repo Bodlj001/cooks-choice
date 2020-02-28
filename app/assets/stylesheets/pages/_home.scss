@@ -36,7 +36,7 @@
   padding: 5px;  
 }
 .card-content{
-  margin-top: 15px;
+  width:  90%
 }
 
 a:hover {
@@ -55,13 +55,15 @@ a:hover {
 
 .c-title{
   width: 90%;
+  text-align: center;
 }
 
 .card-text {
   color: black;
-  border-top: 1px black solid;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
@@ -73,7 +75,6 @@ a:hover {
 }
 
 .card-body {
-  border-top: 1px black solid;
   width: 90%;
   padding: 0;
 }
@@ -91,9 +92,6 @@ a:hover {
   font-weight: bold;
 }
 
-.card-link {
-  background: blue;
-}
 
 .index-avatar {
   border-radius: 50%;
@@ -103,11 +101,12 @@ a:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px black solid;
   width: 90%;
   margin-bottom: 10px;
-  color: black;
+  color: rgba(75, 75, 75, 0.9);
   background:rgba(240, 240, 240, 0.9);
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .card-item  {
   padding-left: 10px;
@@ -119,6 +118,7 @@ a:hover {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .card-social  {
@@ -132,6 +132,7 @@ a:hover {
 
 .card-blocks {
   margin-bottom: 15px;
-  background: rgba(240, 240, 240, 0.9)
+  background: rgba(240, 240, 240, 0.9);
+  box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
 }
 
