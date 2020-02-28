@@ -70,7 +70,9 @@
           <h5><i class="fas fa-utensils" style="padding-right: 6px;"></i>  <%= @user.cuisine %></h5>
 
           <% if @user.price %>
-            <h5 style="margin-top:0;">£<%= @user.price / 100 %> per day</h5>
+
+            <h3 style="margin-top: 9px;">£<%= @user.price %> per day</h3>
+
           <% end %>
         </div>
       </div>
