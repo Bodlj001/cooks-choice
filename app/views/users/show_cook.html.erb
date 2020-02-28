@@ -102,20 +102,26 @@
 
         <h3>Reviews</h3>
         <div class="reviews-show">
-          <% @reviews.each do |review| %>
+          <% if @reviews.length > 0 %>
 
-            <div class="review shadow p-3 mb-3 bg-light">
-              <div style="display: flex; align-items: center;">
-                <%= render "shared/avatar" %>
-                <div class="mx-3">
-                  <% review.rating.times do %>
-                    <i class="far fa-star"></i>
-                  <% end %>
+            <% @reviews.each do |review| %>
+
+              <div class="review shadow p-3 mb-3 bg-light">
+                <div style="display: flex; align-items: center;">
+                  <%= image_tag "https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div class="mx-3">
+                    <% review.rating.times do %>
+                      <i class="fas fa-star" style="color: gold;"></i>
+                    <% end %>
+                  </div>
                 </div>
+                <p class="m-3"><%= review.content %></p>
               </div>
-              <p class="m-3"><%= review.content %></p>
-            </div>
 
+            <% end %>
+
+          <% else %>
+            <p>No reviews yet - be the first to leave one!</p>
           <% end %>
         </div>
       </div>
