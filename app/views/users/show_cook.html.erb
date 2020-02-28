@@ -93,20 +93,22 @@
   <div class="row">
     <div class="col-sm" style="margin-top:1vh;">
 
-      <div class="form-container rounded-lg shadow">
-        <h2>Leave a Review</h2>
-        <%= simple_form_for [ @user, @review ] do |f| %>
-            <%= f.input :content, label: "Review" %>
-            <%= f.input :rating, label: "Rating" %>
-            <%= f.submit "submit", class: "btn btn-primary" %>
+      <% if @viewer_can_review %>
+        <div class="form-container rounded-lg shadow">
+          <h2>Leave a Review</h2>
+          <%= simple_form_for [ @user, @review ] do |f| %>
+              <%= f.input :content, label: "Review" %>
+              <%= f.input :rating, label: "Rating" %>
+              <%= f.submit "submit", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="reviews-show">
+        <% @reviews.each do |review| %>
+          <%= review.content  %>
         <% end %>
       </div>
-    <div class="reviews-show">
-      <% @reviews.each do |review| %>
-        <%= review.content  %>
-      <% end %>
-    </div>
-
 
     </div>
   </div>

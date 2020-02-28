@@ -5,10 +5,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
     @review = Review.new
     @reviews = Review.all
+    @viewer_can_review = Booking.where(cook: @user).length > 0
+
     get_bookings
     @booking = Booking.new(cook: @user)
+
     if @user.iscook
       render :show_cook
     else
