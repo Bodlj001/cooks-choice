@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
     @review = Review.new
     @reviews = Review.where(user: @user)
-    @viewer_can_review = Booking.where(cook: @user).length > 0
 
     get_bookings
     @booking = Booking.new(cook: @user)
@@ -23,7 +22,10 @@ class UsersController < ApplicationController
   private
 
   def get_bookings
-    user_type = @user.iscook ? :cook : :user
-    @bookings = Booking.where(user_type => @user).order(date: :asc)
+    user_type1 = @user.iscook ? :cook : :user
+    @bookings = Booking.where(user_type1 => @user).order(date: :asc)
+
+    user_type2 = @user.iscook ? :user : :cook
+    @viewer_can_review = @bookings.where(user_type2 => current_user).length > 0
   end
 end

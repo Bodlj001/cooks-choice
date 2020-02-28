@@ -99,8 +99,19 @@
         <h3>Reviews</h3>
         <div class="reviews-show">
           <% @reviews.each do |review| %>
-            <%= review.content %>
-            <hr>
+
+            <div class="review shadow p-3 mb-3 bg-light">
+              <div style="display: flex; align-items: center;">
+                <%= render "shared/avatar" %>
+                <div class="mx-3">
+                  <% review.rating.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                </div>
+              </div>
+              <p class="m-3"><%= review.content %></p>
+            </div>
+
           <% end %>
         </div>
       </div>
