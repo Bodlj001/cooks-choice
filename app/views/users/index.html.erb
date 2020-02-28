@@ -1,32 +1,44 @@
-<div class="home-container">
+
   <div class="wrapper">
-    <div class="cards-wrapper container" >
       <h1 class="heading">Choose your chef</h1>
-      <div class="test">
+    <div class="cards-wrapper container" >
+     <div class="row">
       <% @cooks.each do |cook| %>
-        <%= link_to user_path(cook) do %>
-          <div class="card mb-3" style="max-width: 450px;">
-            <div class="row no-gutters">
-              <div class="col-md-4">
+        <%= link_to user_path(cook), class: "col-4" do %>
+          <div class="card">
+            <div class="card-image">
                 <% if cook.avatar.attached?%>
                   <%= cl_image_tag(cook.avatar.key,
                   width: 170, height: 169, crop: :fill) %>
                 <% else %>
-                  <img src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" alt="fake image" style="width: 170px;height: 169px; object-fit: cover; object-position: 50% 65%;">
+                  <img src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" class="index-avatar" alt="fake image" style="width: 80px;height: 80px; object-fit: cover; object-position: 50% 65%;">
                 <% end %>
+            </div>
+
+            <div class="card-body">
+              <div class="card-title">
+                <h5 class="card-title"><%=cook.name%></h5>
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title"><%=cook.name%></h5>
-                  <p class="card-text"><%=cook.bio%></p>
-                  <p class="card-tex"><small class="text-muted">Last updated <%= rand(1..20) %> days ago</small></p>
-                </div>
+              <div class="card-content">
+                <p class="card-text"><%=cook.bio%></p>
               </div>
             </div>
+              <div class=" card-footer ">
+                <div class="footer-items card-social">
+                  <i class="fab fa-facebook-square"></i>
+                  <i class="fab fa-twitter-square"></i>
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="footer-items card-rating-price">
+                  <p class="card-item card-rating"> Rating </p>
+                  <p class="card-item card-price">£<%= rand(100..1000)%></p>
+                </div>
+              </div>
           </div>
         <% end %>
       <% end %>
       </div>
     </div>
   </div>
-</div>
+
