@@ -1,6 +1,11 @@
 
   <div class="wrapper">
+    <div class="home_banner">
       <h1 class="heading">Choose your chef</h1>
+      <p>Over 1000 gourmet chefs ready to cook for you.</p>
+    </div>
+
+
     <div class="cards-wrapper container" >
      <div class="row">
       <% @cooks.each do |cook| %>
@@ -9,7 +14,7 @@
             <div class="card-image">
                 <% if cook.avatar.attached?%>
                   <%= cl_image_tag(cook.avatar.key,
-                  width: 170, height: 169, crop: :fill) %>
+                  width: 80, height: 80, crop: :fill, class: "index-avatar") %>
                 <% else %>
                   <img src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png" class="index-avatar" alt="fake image" style="width: 80px;height: 80px; object-fit: cover; object-position: 50% 65%;">
                 <% end %>
